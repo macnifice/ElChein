@@ -2,7 +2,7 @@
 
 namespace ElChein.Model
 {
-    public class Playera
+    public class Playera : IPlayera
     {
         [Key]    
         int IdShirt { get; set; }
