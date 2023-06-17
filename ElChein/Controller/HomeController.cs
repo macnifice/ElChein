@@ -1,5 +1,4 @@
-﻿using AspNetCore;
-using ElChein.Model;
+﻿using ElChein.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ElChein.Controllers
