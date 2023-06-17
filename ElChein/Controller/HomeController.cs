@@ -5,11 +5,11 @@ namespace ElChein.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IPlayera _playera;
+        private readonly IShirt _shirt;
 
-        public HomeController(IPlayera playera)
+        public HomeController(IShirt Shirt)
         {
-            _playera = playera;
+            _shirt = Shirt;
         }
 
         public IActionResult Index()

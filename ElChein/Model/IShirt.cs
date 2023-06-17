@@ -1,7 +1,6 @@
 ﻿namespace ElChein.Model
 {
-    public interface IPlayera
+    public interface IShirt
     {
-
     }
 }
