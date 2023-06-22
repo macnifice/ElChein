@@ -1,13 +1,31 @@
 ﻿@using ElChein.Model
-@model List<Shirt>
+@model ClothingViewModel
 
-<h1>Playeras</h1>
+
+<h1>Pantalon</h1>
 
 <p>
-    @foreach(var playeras in Model)
+    @foreach(var playeras in Model.Pants)
     {
+        <p>
+            @Html.DisplayFor(modelItem => playeras.Name)
+        </p>
         <li>
             @Html.DisplayFor(modelItem => playeras.Price)
         </li>
+    }
+</p>
+
+<h1>PLayera</h1>
+
+<p>
+    @foreach (var playeras in Model.Shirts)
+    {
+    <p>
+            @Html.DisplayFor(modelItem => playeras.Size)
+    </p>
+    <li>
+            @Html.DisplayFor(modelItem => playeras.Price)
+    </li>
     }
 </p>

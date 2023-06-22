@@ -24,17 +24,28 @@ public partial class ElCheinContext : DbContext
                 .HasNoKey()
                 .ToTable("Pant");
 
+            entity.Property(e => e.Brand)
+                .HasMaxLength(50)
+                .IsUnicode(false);
             entity.Property(e => e.Color)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.Genere)
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.IdPants).ValueGeneratedOnAdd();
             entity.Property(e => e.Material)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.Price).HasColumnType("decimal(18, 2)");
-            entity.Property(e => e.Size)
+            entity.Property(e => e.Name)
                 .HasMaxLength(50)
                 .IsUnicode(false);
+            entity.Property(e => e.Price).HasColumnType("decimal(18, 2)");
+            entity.Property(e => e.Type)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.Xl).HasColumnName("XL");
+            entity.Property(e => e.Xxl).HasColumnName("XXL");
         });
 
         modelBuilder.Entity<Shirt>(entity =>

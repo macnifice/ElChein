@@ -1,6 +1,7 @@
 ﻿using ElChein.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.IO;
 
 namespace ElChein.Controllers
 {
@@ -16,8 +17,15 @@ namespace ElChein.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var Shirt = _elCheinContext.Shirts.ToList();
-            return View(Shirt);
+            var viewModel = new ClothingViewModel
+            {
+                Shirts = await _elCheinContext.Shirts.ToListAsync(),
+                Pants = await _elCheinContext.Pants.ToListAsync(),
+            };
+            return View(viewModel);
         }
+       
+          
+        
     }
 }
