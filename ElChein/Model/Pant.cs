@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ElChein.Model;
 
-public partial class Pant
+public partial class Pant 
 {
     public int IdPants { get; set; }
 

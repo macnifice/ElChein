@@ -1,20 +1,23 @@
 ﻿using ElChein.Model;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ElChein.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IShirt _shirt;
+        private readonly ElCheinContext _elCheinContext;
 
-        public HomeController(IShirt Shirt)
+        public HomeController(ElCheinContext elCheinContext)
         {
-            _shirt = Shirt;
+            _elCheinContext = elCheinContext;
         }
 
-        public IActionResult Index()
+
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var Shirt = _elCheinContext.Shirts.ToList();
+            return View(Shirt);
         }
     }
 }

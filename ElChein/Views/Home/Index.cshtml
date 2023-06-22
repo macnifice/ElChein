@@ -1,0 +1,13 @@
+﻿@using ElChein.Model
+@model List<Shirt>
+
+<h1>Playeras</h1>
+
+<p>
+    @foreach(var playeras in Model)
+    {
+        <li>
+            @Html.DisplayFor(modelItem => playeras.Price)
+        </li>
+    }
+</p>
