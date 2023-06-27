@@ -1,14 +1,18 @@
-﻿<h1>Pantalon</h1>
+﻿@using ElChein.Model
+@model ClothingViewModel
+
+
+<h1>Pantalon</h1>
 
 <p>
-    @foreach(var pants in Model.Pants)
+    @foreach(var playeras in Model.Pants)
     {
-    <li>
-        @pants.Image<br>
-        @pants.Name<br>
-        @pants.Price
-    </li>
-
+        <p>
+            @Html.DisplayFor(modelItem => playeras.Name)
+        </p>
+        <li>
+            @Html.DisplayFor(modelItem => playeras.Price)
+        </li>
     }
 </p>
 

@@ -16,7 +16,6 @@ public partial class ElCheinContext : DbContext
 
     public virtual DbSet<Shirt> Shirts { get; set; }
 
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Pant>(entity =>
@@ -35,9 +34,6 @@ public partial class ElCheinContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.IdPants).ValueGeneratedOnAdd();
-            entity.Property(e => e.Image)
-                .HasMaxLength(150)
-                .IsUnicode(false);
             entity.Property(e => e.Material)
                 .HasMaxLength(50)
                 .IsUnicode(false);

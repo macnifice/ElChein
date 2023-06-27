@@ -30,6 +30,4 @@ public partial class Pant
     public int? Xl { get; set; }
 
     public int? Xxl { get; set; }
-
-    public string? Image { get; set; }
 }
