@@ -12,7 +12,7 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-
+//handle de errores
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
@@ -20,6 +20,12 @@ if (app.Environment.IsDevelopment())
 
 //Ruta 
 app.MapDefaultControllerRoute();
+
+//certificaion https
+app.UseHttpsRedirection();
+
+//css & wwwroot
+app.UseStaticFiles();
 
 
 app.Run();

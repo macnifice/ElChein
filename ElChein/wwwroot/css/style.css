@@ -1,0 +1,10 @@
+﻿@charset "UTF-8";
+
+body {
+   
+}
+
+.card-img-top {
+    height: 500px; /* Ajusta la altura deseada */
+    object-fit: cover; /* Ajusta el modo de ajuste de la imagen */
+}
