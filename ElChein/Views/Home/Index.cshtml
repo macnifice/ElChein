@@ -1,31 +1,33 @@
 ﻿@using ElChein.Model
 @model ClothingViewModel
 
+<style>
 
-<h1>Pantalon</h1>
-
-<p>
-    @foreach(var playeras in Model.Pants)
-    {
-        <p>
-            @Html.DisplayFor(modelItem => playeras.Name)
-        </p>
-        <li>
-            @Html.DisplayFor(modelItem => playeras.Price)
-        </li>
+    .card-img-top {
+        height: 500px; /* Ajusta la altura deseada /*/
+        object-fit: cover; /* Ajusta el modo de ajuste de la imagen */
     }
-</p>
+</style>
 
-<h1>PLayera</h1>
+<div class="album py-5 bg-light">
+    <div class="container">
 
-<p>
-    @foreach (var playeras in Model.Shirts)
-    {
-    <p>
-            @Html.DisplayFor(modelItem => playeras.Size)
-    </p>
-    <li>
-            @Html.DisplayFor(modelItem => playeras.Price)
-    </li>
-    }
-</p>
+        <div class="row">
+            @foreach (var item in Model.Shirts)
+            {
+                <div class="col-md-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="@item.Image" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Name</h5>
+                            <p class="card-text">$@item.Price</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+</div>
