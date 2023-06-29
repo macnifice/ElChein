@@ -1,31 +1,42 @@
-﻿@using ElChein.Model
-@model ClothingViewModel
-
+﻿
 
 <h1>Pantalon</h1>
+<div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
 
-<p>
-    @foreach(var playeras in Model.Pants)
-    {
-        <p>
-            @Html.DisplayFor(modelItem => playeras.Name)
-        </p>
-        <li>
-            @Html.DisplayFor(modelItem => playeras.Price)
-        </li>
-    }
-</p>
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            @foreach (var pants in Model.Pants)
+            {
+                <div class="col-md-3">
+                    <div class="d-flex flex-row">
+                        <div class="card" style="width: 18rem;">
+                            <img src="@pants.Image" class="card-img-top" alt="Pantalón">
+                            <div class="card-body">
+                                <h5 class="card-title">@pants.Name</h5>
+                                <p class="card-text">$@pants.Price</p>
+
+                                <a href="#" class="btn btn-primary">Comprar ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
 
 <h1>PLayera</h1>
 
-<p>
-    @foreach (var playeras in Model.Shirts)
-    {
-    <p>
-            @Html.DisplayFor(modelItem => playeras.Size)
-    </p>
-    <li>
-            @Html.DisplayFor(modelItem => playeras.Price)
-    </li>
-    }
-</p>
+@foreach (var playeras in Model.Shirts)
+{
+
+}
