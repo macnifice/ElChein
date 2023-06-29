@@ -4,28 +4,74 @@
 
 <h1>Pantalon</h1>
 
-<p>
-    @foreach(var playeras in Model.Pants)
-    {
-        <p>
-            @Html.DisplayFor(modelItem => playeras.Name)
-        </p>
-        <li>
-            @Html.DisplayFor(modelItem => playeras.Price)
-        </li>
+
+<style>
+    
+    .card-img-top {
+        height: 500px; /* Ajusta la altura deseada */
+        object-fit: cover; /* Ajusta el modo de ajuste de la imagen */
     }
-</p>
+</style>
+
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            @foreach (var pants in Model.Pants)
+            {
+                <div class="col-md-3">
+                    <div class="d-flex flex-row">
+                        <div class="card" style="width: 18rem;">
+                            <img src="@pants.Image" class="card-img-top" alt="Pantalón">
+                            <div class="card-body">
+                                <h5 class="card-title">@pants.Name</h5>
+                                <p class="card-text">$@pants.Price</p>
+
+                                <a href="#" class="btn btn-primary">Comprar ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+@*<div class="album py-5 bg-light">
+            <div class="container">
+
+            <div class="row">
+            @foreach (var pants in Model.Pants)
+            {
+            <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+            <p class="card-text">@pants.Name</p>
+            <p class="card-text">@pants.Price</p>
+            <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+            <a tye="btn btn-succes" asp-controller="Club" asp-action="Detail" asp-all-route-id="@pants.IdPants" class="btn btn-sm btn-outline-secondary">View</a>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+            </div>
+            <small class="text-muted">notion</small>
+            </div>
+            </div>
+            </div>
+            </div>
+            }
+
+
+            </div>
+            </div>
+            </div>*@
+
 
 <h1>PLayera</h1>
 
-<p>
-    @foreach (var playeras in Model.Shirts)
-    {
-    <p>
-            @Html.DisplayFor(modelItem => playeras.Size)
-    </p>
-    <li>
-            @Html.DisplayFor(modelItem => playeras.Price)
-    </li>
-    }
-</p>
+
+@foreach (var playeras in Model.Shirts)
+{
+
+
+}
